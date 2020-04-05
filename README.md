@@ -63,13 +63,13 @@ Nice to have:
 
 #### Cons
 * Large portions of the form must be reloaded when changes to some fields occur.
-** You need javascript to send in the item's current values to an endpoint that sends back a new version of the item's form with the new choices and defaults then replaces the existing form.
+  * You need javascript to send in the item's current values to an endpoint that sends back a new version of the item's form with the new choices and defaults then replaces the existing form.
 * Requires supporting multiple ways to load the form.
-** Forms must be built to allow loading a single item (that may not exist yet) with only some of the values filled in, so it can load the item form with the correct choices and defaults based on your current selection.
-** Forms must also be built to set the initial field values to what's currently stored in the database, so we can detect what changed.
+  * Forms must be built to allow loading a single item (that may not exist yet) with only some of the values filled in, so it can load the item form with the correct choices and defaults based on your current selection.
+  * Forms must also be built to set the initial field values to what's currently stored in the database, so we can detect what changed.
 * The page must be reloaded when the form is submitted.
 * Dealing with paired inputs nested in items is difficult.
-** Nested formsets are really complicated, so you end up creating a field for each possible value.
+  * Nested formsets are really complicated, so you end up creating a field for each possible value.
 * Issues with separation of concerns (display of the form is tightly coupled). This implemention uses the server side form logic to render the form, so having a slightly different implementation of the form in another place (like a mobile app that shows the form in a different layout) is going to require reverse engineering some of the server side logic.
 * Disabled checkboxes are difficult to implement. HTML forms do not submit disabled checkboxes, so your server side code needs to account for this and apply appropriate defaults.
 
@@ -86,17 +86,17 @@ Nice to have:
 
 #### Pros
 * No need to refresh on each field change
-** Also no need to share state with the back-end on each field change. All the possible choices are loaded just once when the form loads.
+  * Also no need to share state with the back-end on each field change. All the possible choices are loaded just once when the form loads.
 * The logic for displaying the form isn't mostly packed into the form.
 * Better separation of concerns. You could use the APIs to implement this form in a separate mobile app.
 
 #### Cons
 * The jQuery code for keeping the DOM/HTML in sync with the javascript objects quickly becomes very complicated. It also makes refactoring and testing difficult.
 * Validation code is duplicated between back-end and front-end.
-** The front-end also needs code to map server side errors to client errors.
-*** Potential solutions:
-**** Ember Data's JSON-API adapter seems to have a way to do this.
-**** https://github.com/rjsf-team/react-jsonschema-form
+  * The front-end also needs code to map server side errors to client errors.
+    * Potential solutions:
+      * Ember Data's JSON-API adapter seems to have a way to do this.
+      * https://github.com/rjsf-team/react-jsonschema-form
 
 ### Method 3: Client-side Form w/ Vue.js:
 
@@ -105,7 +105,7 @@ Nice to have:
 
 #### Pros
 * More maintainable than jQuery, because it automatically keeps the DOM/HTML in sync with your javascript objects. Two-way binding makes things easier to refactor. Also encourages you to make things in a more testable way by making you break your code into components and not use global variables.
-** See: https://dev.to/tsanak/make-your-life-easier-with-vuejs-4mj5
+  * See: https://dev.to/tsanak/make-your-life-easier-with-vuejs-4mj5
 
 #### Cons
 * Mostly the same as "Client-side forms w/ jquery" Cons, except without the issues with difficult to maintain front-end code.
