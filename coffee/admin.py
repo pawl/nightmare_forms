@@ -30,8 +30,49 @@ class IceChoiceAdmin(admin.ModelAdmin):
     pass
 
 
+class AllowedMilksInline(admin.StackedInline):
+    model = models.Product.allowed_milks.through
+    extra = 0
+
+
+class AllowedSizesInline(admin.StackedInline):
+    model = models.Product.allowed_sizes.through
+    extra = 0
+
+
+class AllowedSweetenersInline(admin.StackedInline):
+    model = models.Product.allowed_sweeteners.through
+    extra = 0
+
+
+class AllowedEspressoShotsInline(admin.StackedInline):
+    model = models.Product.allowed_espresso_shots.through
+    extra = 0
+
+
+class AllowedJuicesInline(admin.StackedInline):
+    model = models.Product.allowed_juices.through
+    extra = 0
+
+
+class AllowedToppingsInline(admin.StackedInline):
+    model = models.Product.allowed_toppings.through
+    extra = 0
+
+
+class AllowedTeasInline(admin.StackedInline):
+    model = models.Product.allowed_teas.through
+    extra = 0
+
+
 class ProductAdmin(admin.ModelAdmin):
-    pass
+    inlines = [AllowedMilksInline,
+               AllowedSizesInline,
+               AllowedSweetenersInline,
+               AllowedEspressoShotsInline,
+               AllowedJuicesInline,
+               AllowedToppingsInline,
+               AllowedTeasInline]
 
 
 class SizeAdmin(admin.ModelAdmin):
