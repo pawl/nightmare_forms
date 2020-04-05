@@ -50,7 +50,7 @@ Nice to have:
     * POST - validates data and saves the changes to the order
 * /orderitem/
     * GET w/ parameters - allows reloading an item's form with the available choices and defaults based on the current selections
-* /<id>/
+* /`<id>`/
     * GET - loads order form with existing items
 * Django Formsets
 * Reloading the form when changes are made
