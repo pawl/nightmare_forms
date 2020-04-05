@@ -104,35 +104,49 @@ class Milk(models.Model):
         return self.name
 
 
+class TempChoice(models.Model):
+    """
+    Stores choices for ProductMilk temperatures
+
+    Allows adding and renaming ProductMilk temp options through the database
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+class FoamChoice(models.Model):
+    """
+    Stores choices for ProductMilk foam
+
+    Allows adding and renaming ProductMilk foam options through the database
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class ProductMilk(models.Model):
     """
     Intermediate model for Product <-> Milk, for Product.allowed_milks/default_milk
 
     Stores additional info (including temperature, foam, and pricing) for the Product's Milk
     """
-    COLD = 0
-    EXTRA_HOT = 1
-    WARM = 2
-    TEMP_CHOICES = [
-        (COLD, 'Cold'),
-        (EXTRA_HOT, 'Extra Hot'),
-        (WARM, 'Warm')]
-    default_temp = models.IntegerField(choices=TEMP_CHOICES, null=True)
-    allowed_temp = ArrayField(models.IntegerField(choices=TEMP_CHOICES))
+    default_temp = models.ForeignKey(
+        TempChoice,
+        on_delete=models.PROTECT,
+        related_name='default_product_milks',
+        null=True)
+    allowed_temps = models.ManyToManyField(TempChoice)
 
-    REGULAR = 0
-    EXTRA_WET = 1
-    EXTRA_DRY = 2
-    DRY = 3
-    WET = 4
-    FOAM_CHOICES = [
-        (REGULAR, 'Regular'),
-        (EXTRA_WET, 'Extra Wet'),
-        (EXTRA_DRY, 'Extra Dry'),
-        (DRY, 'Dry'),
-        (WET, 'Wet')]
-    default_foam = models.IntegerField(choices=FOAM_CHOICES, null=True)
-    allowed_foam = ArrayField(models.IntegerField(choices=FOAM_CHOICES))
+    default_foam = models.ForeignKey(
+        FoamChoice,
+        on_delete=models.PROTECT,
+        related_name='default_product_milks',
+        null=True)
+    allowed_foams = models.ManyToManyField(FoamChoice)
 
     milk = models.ForeignKey(Milk, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
@@ -234,23 +248,33 @@ class ToppingCategory(models.Model):
         return self.name
 
 
+class ToppingChoice(models.Model):
+    """
+    Stores choices for amounts of Toppings
+
+    Allows adding and renaming topping amount options through the database
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Topping(models.Model):
     """
     Allows adding new types of toppings through the database
     """
-    NO = 0
-    LIGHT = 1
-    REGULAR = 2
-    EXTRA = 3
-    TOPPING_CHOICES = [
-        (NO, 'No'),
-        (LIGHT, 'Light'),
-        (REGULAR, 'Regular'),
-        (EXTRA, 'Extra')]
-    default_choice = models.IntegerField(choices=TOPPING_CHOICES, null=True)
-    allowed_choices = ArrayField(models.IntegerField(choices=TOPPING_CHOICES))
+    default_choice = models.ForeignKey(
+        ToppingChoice,
+        on_delete=models.PROTECT,
+        related_name='default_toppings',
+        null=True)
+    allowed_choices = models.ManyToManyField(ToppingChoice)
     category = models.ForeignKey(ToppingCategory, on_delete=models.PROTECT)
     name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
 
 
 class ProductTopping(models.Model):
@@ -310,36 +334,51 @@ class OrderItemProductTea(models.Model):
     quantity = models.IntegerField()
 
 
+class IceChoice(models.Model):
+    """
+    Stores choices for Product ice levels
+
+    Allows adding and renaming ice level options through the database
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
+class RoomChoice(models.Model):
+    """
+    Stores choices for Product room levels
+
+    Allows adding and renaming room level options through the database
+    """
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Product(models.Model):
     """
     Stores the allowed and default ingredients for a menu product, like a recipe
     but with the allowed modifications too.
     """
-    NO = 0
-    LIGHT = 1
-    REGULAR = 2
-    EXTRA = 3
-    ICE_CHOICES = [
-        (NO, 'No'),
-        (LIGHT, 'Light'),
-        (REGULAR, 'Regular'),
-        (EXTRA, 'Extra')]
-    ROOM_CHOICES = ICE_CHOICES
-
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=4, decimal_places=2)
 
-    allowed_ice = ArrayField(
-        models.IntegerField(choices=ICE_CHOICES),
-        null=True,
-        blank=True)
-    default_ice = models.IntegerField(choices=ICE_CHOICES, null=True)
+    allowed_ice = models.ManyToManyField(IceChoice)
+    default_ice = models.ForeignKey(
+        IceChoice,
+        on_delete=models.PROTECT,
+        related_name='default_products',
+        null=True)
 
-    allowed_room = ArrayField(
-        models.IntegerField(choices=ROOM_CHOICES),
-        null=True,
-        blank=True)
-    default_room = models.IntegerField(choices=ROOM_CHOICES, null=True)
+    allowed_room = models.ManyToManyField(RoomChoice)
+    default_room = models.ForeignKey(
+        RoomChoice,
+        on_delete=models.PROTECT,
+        related_name='default_products',
+        null=True)
 
     allowed_milks = models.ManyToManyField(Milk, through=ProductMilk)
     default_milk = models.ForeignKey(
@@ -382,9 +421,8 @@ class OrderItem(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
-    ice = models.IntegerField(choices=Product.ICE_CHOICES, null=True)
-    room = models.IntegerField(choices=Product.ROOM_CHOICES, null=True)
-
+    ice = models.ForeignKey(IceChoice, on_delete=models.PROTECT)
+    room = models.ForeignKey(RoomChoice, on_delete=models.PROTECT)
     size = models.ForeignKey(ProductSize, on_delete=models.PROTECT)
     milk = models.ForeignKey(ProductMilk, on_delete=models.PROTECT)
 

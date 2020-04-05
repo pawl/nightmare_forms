@@ -22,6 +22,14 @@ class MilkAdmin(admin.ModelAdmin):
     pass
 
 
+class RoomChoiceAdmin(admin.ModelAdmin):
+    pass
+
+
+class IceChoiceAdmin(admin.ModelAdmin):
+    pass
+
+
 class ProductAdmin(admin.ModelAdmin):
     pass
 
@@ -55,6 +63,8 @@ admin.site.register(models.EspressoShot, EspressoShotAdmin)
 admin.site.register(models.FlavorCategory, FlavorCategoryAdmin)
 admin.site.register(models.Flavor, FlavorAdmin)
 admin.site.register(models.Milk, MilkAdmin)
+admin.site.register(models.RoomChoice, RoomChoiceAdmin)
+admin.site.register(models.IceChoice, IceChoiceAdmin)
 admin.site.register(models.Product, ProductAdmin)
 admin.site.register(models.Size, SizeAdmin)
 admin.site.register(models.Sweetener, SweetenerAdmin)

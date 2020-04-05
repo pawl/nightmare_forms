@@ -62,7 +62,7 @@ Nice to have:
 * No extra code for serializing and deserializing. (HTML forms handle this)
 
 #### Cons
-* Large portions of the form must be reloaded when changes to some fields occur.
+* Large portions of the form must be reloaded when changes to some fields occur. This requires a network request and can provide a bad user experience if the response isn't quick.
   * You need javascript to send in the item's current values to an endpoint that sends back a new version of the item's form with the new choices and defaults then replaces the existing form.
 * Requires supporting multiple ways to load the form.
   * Forms must be built to allow loading a single item (that may not exist yet) with only some of the values filled in, so it can load the item form with the correct choices and defaults based on your current selection.
