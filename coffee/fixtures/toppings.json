@@ -1,0 +1,155 @@
+[
+  {
+    "model": "coffee.Topping",
+    "pk": 1,
+    "fields": {
+      "name": "Caramel Brulee",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 2,
+    "fields": {
+      "name": "Cascara Topping",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 3,
+    "fields": {
+      "name": "Chestnut Praline",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 4,
+    "fields": {
+      "name": "Chocolate Curls",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 5,
+    "fields": {
+      "name": "Cinnamon Dolce Sprinkles",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 6,
+    "fields": {
+      "name": "Pumpkin Spice",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 7,
+    "fields": {
+      "name": "Smoked Sea Salt",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 8,
+    "fields": {
+      "name": "Holiday Sugar Sprinkles",
+      "category": 5,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 9,
+    "fields": {
+      "name": "Caramel Drizzle",
+      "category": 2,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 10,
+    "fields": {
+      "name": "Mocha Drizzle",
+      "category": 2,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 11,
+    "fields": {
+      "name": "Whipped Cream",
+      "category": 4,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 12,
+    "fields": {
+      "name": "Chocolate Powder",
+      "category": 3,
+      "allowed_choices": [0, 2]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 13,
+    "fields": {
+      "name": "Cinnamon Powder",
+      "category": 3,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 14,
+    "fields": {
+      "name": "Nutmeg Powder",
+      "category": 3,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 15,
+    "fields": {
+      "name": "Vanilla Powder",
+      "category": 3,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 16,
+    "fields": {
+      "name": "Cold Foam",
+      "category": 1,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 17,
+    "fields": {
+      "name": "Vanilla Sweet Cream Cold Foam",
+      "category": 1,
+      "allowed_choices": [0, 1, 2, 3]
+    }
+  }
+]

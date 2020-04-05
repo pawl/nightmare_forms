@@ -1,0 +1,65 @@
+[
+  {
+    "model": "coffee.Milk",
+    "pk": 1,
+    "fields": {
+      "name": "1% Milk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 2,
+    "fields": {
+      "name": "2% Milk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 3,
+    "fields": {
+      "name": "Coconut Milk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 4,
+    "fields": {
+      "name": "Cream (Half & Half)"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 5,
+    "fields": {
+      "name": "Heavy Cream"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 6,
+    "fields": {
+      "name": "Nonfat Milk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 7,
+    "fields": {
+      "name": "Soymilk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 8,
+    "fields": {
+      "name": "Almond Milk"
+    }
+  },
+  {
+    "model": "coffee.Milk",
+    "pk": 9,
+    "fields": {
+      "name": "Whole Milk"
+    }
+  }
+]

@@ -1,0 +1,51 @@
+[
+  {
+    "model": "coffee.Size",
+    "pk": 1,
+    "fields": {
+      "name": "Small"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 2,
+    "fields": {
+      "name": "Medium"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 3,
+    "fields": {
+      "name": "Large"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 4,
+    "fields": {
+      "name": "X-Large"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 5,
+    "fields": {
+      "name": "Single"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 6,
+    "fields": {
+      "name": "Double"
+    }
+  },
+  {
+    "model": "coffee.Size",
+    "pk": 7,
+    "fields": {
+      "name": "Triple"
+    }
+  }
+]

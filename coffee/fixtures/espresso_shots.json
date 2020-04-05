@@ -1,0 +1,23 @@
+[
+  {
+    "model": "coffee.EspressoShot",
+    "pk": 1,
+    "fields": {
+      "name": "Regular"
+    }
+  },
+  {
+    "model": "coffee.EspressoShot",
+    "pk": 2,
+    "fields": {
+      "name": "Blonde"
+    }
+  },
+  {
+    "model": "coffee.EspressoShot",
+    "pk": 3,
+    "fields": {
+      "name": "Decaf"
+    }
+  }
+]

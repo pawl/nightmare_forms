@@ -1,0 +1,16 @@
+[
+  {
+    "model": "coffee.FlavorCategory",
+    "pk": 1,
+    "fields": {
+      "name": "Sauces"
+    }
+  },
+  {
+    "model": "coffee.FlavorCategory",
+    "pk": 2,
+    "fields": {
+      "name": "Syrups"
+    }
+  }
+]
