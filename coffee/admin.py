@@ -40,6 +40,11 @@ class AllowedSizesInline(admin.StackedInline):
     extra = 0
 
 
+class AllowedFlavorsInline(admin.StackedInline):
+    model = models.Product.allowed_flavors.through
+    extra = 0
+
+
 class AllowedSweetenersInline(admin.StackedInline):
     model = models.Product.allowed_sweeteners.through
     extra = 0
@@ -68,6 +73,7 @@ class AllowedTeasInline(admin.StackedInline):
 class ProductAdmin(admin.ModelAdmin):
     inlines = [AllowedMilksInline,
                AllowedSizesInline,
+               AllowedFlavorsInline,
                AllowedSweetenersInline,
                AllowedEspressoShotsInline,
                AllowedJuicesInline,

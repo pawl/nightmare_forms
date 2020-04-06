@@ -148,20 +148,6 @@ class ProductMilk(models.Model):
 
     Stores additional info (including temperature, foam, and pricing) for the Product's Milk
     """
-    default_temp = models.ForeignKey(
-        TempChoice,
-        on_delete=models.PROTECT,
-        related_name='default_product_milks',
-        null=True)
-    allowed_temps = models.ManyToManyField(TempChoice)
-
-    default_foam = models.ForeignKey(
-        FoamChoice,
-        on_delete=models.PROTECT,
-        related_name='default_product_milks',
-        null=True)
-    allowed_foams = models.ManyToManyField(FoamChoice)
-
     milk = models.ForeignKey(Milk, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
@@ -192,7 +178,6 @@ class ProductJuice(models.Model):
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    is_default = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.juice)
@@ -229,7 +214,7 @@ class Flavor(models.Model):
     name = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.name
+        return '{} {}'.format(self.name, self.category)
 
 
 class ProductFlavor(models.Model):
@@ -242,8 +227,7 @@ class ProductFlavor(models.Model):
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    is_default = models.BooleanField(default=False)
-    # default flavor pumps depends on size and is on ProductSize.default_flavor_pumps
+    # default # of flavor pumps depends on size and is on ProductSize.default_flavor_pumps
 
     def __str__(self):
         return str(self.flavor)
@@ -311,7 +295,6 @@ class ProductTopping(models.Model):
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    is_default = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.topping)
@@ -347,8 +330,6 @@ class ProductTea(models.Model):
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    is_default = models.BooleanField(default=False)
-    default_quantity = models.PositiveSmallIntegerField()
 
     def __str__(self):
         return str(self.tea)
@@ -394,7 +375,10 @@ class Product(models.Model):
     but with the allowed modifications too.
     """
     name = models.CharField(max_length=200)
-    price = models.DecimalField(max_digits=4, decimal_places=2)
+    price = models.DecimalField(
+        max_digits=4,
+        decimal_places=2,
+        help_text="base price of the product, does not include cost of size increases")
     is_active = models.BooleanField(default=True)
 
     allowed_ice = models.ManyToManyField(IceChoice, blank=True)
@@ -420,6 +404,20 @@ class Product(models.Model):
         related_name='default_products',
         null=True,
         blank=True)
+    default_milk_temp = models.ForeignKey(
+        TempChoice,
+        on_delete=models.PROTECT,
+        related_name='default_products',
+        null=True,
+        blank=True)
+    allowed_milk_temps = models.ManyToManyField(TempChoice, blank=True)
+    default_milk_foam = models.ForeignKey(
+        FoamChoice,
+        on_delete=models.PROTECT,
+        related_name='default_products',
+        null=True,
+        blank=True)
+    allowed_milk_foams = models.ManyToManyField(FoamChoice, blank=True)
 
     allowed_sizes = models.ManyToManyField(Size, through=ProductSize, blank=True)
     default_size = models.ForeignKey(
@@ -431,6 +429,9 @@ class Product(models.Model):
 
     allowed_sweeteners = models.ManyToManyField(Sweetener, through=ProductSweetener)
     default_sweeteners = models.ManyToManyField(ProductSweetener, related_name='default_products', blank=True)
+
+    allowed_flavors = models.ManyToManyField(Flavor, through=ProductFlavor)
+    default_flavors = models.ManyToManyField(ProductFlavor, related_name='default_products', blank=True)
 
     allowed_espresso_shots = models.ManyToManyField(EspressoShot, through=ProductEspressoShot)
     default_espresso_shots = models.ManyToManyField(ProductEspressoShot, related_name='default_products', blank=True)

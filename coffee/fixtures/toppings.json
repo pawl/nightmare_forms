@@ -151,5 +151,23 @@
       "category": 1,
       "allowed_choices": [1, 2, 3, 4]
     }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 18,
+    "fields": {
+      "name": "Smokey Butterscotch Sugar Topping",
+      "category": 1,
+      "allowed_choices": [1, 2, 3, 4]
+    }
+  },
+  {
+    "model": "coffee.Topping",
+    "pk": 19,
+    "fields": {
+      "name": "Toasted Honey Topping",
+      "category": 1,
+      "allowed_choices": [1, 2, 3, 4]
+    }
   }
 ]

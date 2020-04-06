@@ -17,14 +17,14 @@
     "model": "coffee.Milk",
     "pk": 3,
     "fields": {
-      "name": "Coconut Milk"
+      "name": "Coconut"
     }
   },
   {
     "model": "coffee.Milk",
     "pk": 4,
     "fields": {
-      "name": "Cream (Half & Half)"
+      "name": "Breve (Half & Half)"
     }
   },
   {
@@ -38,28 +38,28 @@
     "model": "coffee.Milk",
     "pk": 6,
     "fields": {
-      "name": "Nonfat Milk"
+      "name": "Nonfat"
     }
   },
   {
     "model": "coffee.Milk",
     "pk": 7,
     "fields": {
-      "name": "Soymilk"
+      "name": "Soy"
     }
   },
   {
     "model": "coffee.Milk",
     "pk": 8,
     "fields": {
-      "name": "Almond Milk"
+      "name": "Almond"
     }
   },
   {
     "model": "coffee.Milk",
     "pk": 9,
     "fields": {
-      "name": "Whole Milk"
+      "name": "Whole"
     }
   }
 ]
