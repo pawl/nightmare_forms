@@ -1,11 +1,8 @@
-from django.shortcuts import render
+# from .forms import MyForm
+from coffee import models, serializers
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
-# from .forms import MyForm
-# from .models import Article
+from rest_framework import generics
 
 
 class ExampleHomeView(TemplateView):
@@ -32,7 +29,11 @@ class VueFormExampleView(TemplateView):
     template_name = "vue_form_example.html"
 
 
-class ItemChoicesView(APIView):
-    def get(self, request):
-        # articles = Article.objects.all()
-        return Response({"articles": 'articles'})
+class ProductListAPIView(generics.ListAPIView):
+    serializer_class = serializers.ProductSerializer
+
+    def get_queryset(self):
+        """
+        This view should return a list of all the currently active products.
+        """
+        return models.Product.objects.filter(is_active=True).order_by('name')
