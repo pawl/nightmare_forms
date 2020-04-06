@@ -23,8 +23,8 @@ class ProductEspressoShot(models.Model):
     """
     espresso_shot = models.ForeignKey(EspressoShot, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
-    default_quantity = models.IntegerField(default=1)
     is_active = models.BooleanField(default=True)
+    # default number of shots depends on size and is on ProductSize.default_espresso_shots
 
 
 class OrderItemProductEspressoShot(models.Model):
@@ -55,7 +55,7 @@ class ProductSweetener(models.Model):
     """
     sweetener = models.ForeignKey(Sweetener, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
-    default_quantity = models.IntegerField()
+    default_quantity = models.PositiveSmallIntegerField()
     is_active = models.BooleanField(default=True)
 
 
@@ -88,8 +88,12 @@ class ProductSize(models.Model):
     size = models.ForeignKey(Size, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
-    # pumps of sauce and syrup for the product size
-    flavor_pumps = models.IntegerField(default=0)
+    default_flavor_pumps = models.PositiveSmallIntegerField(
+        default=0,
+        help_text="default number of pumps of sauce and syrup for the product size")
+    default_espresso_shots = models.PositiveSmallIntegerField(
+        default=0,
+        help_text="default number of espresso shots for the product size")
     is_active = models.BooleanField(default=True)
     # default sizes are set on Product
 
@@ -223,6 +227,7 @@ class ProductFlavor(models.Model):
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
+    # default flavor pumps depends on size and is on ProductSize.default_flavor_pumps
 
 
 class OrderItemProductFlavor(models.Model):
@@ -321,7 +326,7 @@ class ProductTea(models.Model):
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
-    default_quantity = models.IntegerField()
+    default_quantity = models.PositiveSmallIntegerField()
 
 
 class OrderItemProductTea(models.Model):
@@ -365,6 +370,7 @@ class Product(models.Model):
     """
     name = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=4, decimal_places=2)
+    is_active = models.BooleanField(default=True)
 
     allowed_ice = models.ManyToManyField(IceChoice)
     default_ice = models.ForeignKey(
@@ -416,7 +422,7 @@ class Product(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey('Order', on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
-    quantity = models.IntegerField(default=1)
+    quantity = models.PositiveSmallIntegerField(default=1)
     total = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
