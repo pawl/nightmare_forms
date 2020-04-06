@@ -1,6 +1,5 @@
 from decimal import Decimal
 
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils import timezone
 
@@ -25,6 +24,9 @@ class ProductEspressoShot(models.Model):
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     is_active = models.BooleanField(default=True)
     # default number of shots depends on size and is on ProductSize.default_espresso_shots
+
+    def __str__(self):
+        return str(self.espresso_shot)
 
 
 class OrderItemProductEspressoShot(models.Model):
@@ -55,8 +57,10 @@ class ProductSweetener(models.Model):
     """
     sweetener = models.ForeignKey(Sweetener, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
-    default_quantity = models.PositiveSmallIntegerField()
     is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return str(self.sweetener)
 
 
 class OrderItemProductSweetener(models.Model):
@@ -94,8 +98,14 @@ class ProductSize(models.Model):
     default_espresso_shots = models.PositiveSmallIntegerField(
         default=0,
         help_text="default number of espresso shots for the product size")
+    default_tea_quantity = models.PositiveSmallIntegerField(
+        default=0,
+        help_text="default number of teas for the product size")
     is_active = models.BooleanField(default=True)
     # default sizes are set on Product
+
+    def __str__(self):
+        return str(self.size)
 
 
 class Milk(models.Model):
@@ -158,6 +168,9 @@ class ProductMilk(models.Model):
     is_active = models.BooleanField(default=True)
     # default milk is set on Product
 
+    def __str__(self):
+        return str(self.milk)
+
 
 class Juice(models.Model):
     """
@@ -180,6 +193,9 @@ class ProductJuice(models.Model):
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.juice)
 
 
 class OrderItemProductJuice(models.Model):
@@ -228,6 +244,9 @@ class ProductFlavor(models.Model):
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
     # default flavor pumps depends on size and is on ProductSize.default_flavor_pumps
+
+    def __str__(self):
+        return str(self.flavor)
 
 
 class OrderItemProductFlavor(models.Model):
@@ -294,6 +313,9 @@ class ProductTopping(models.Model):
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(self.topping)
+
 
 class OrderItemProductTopping(models.Model):
     """
@@ -321,12 +343,15 @@ class ProductTea(models.Model):
 
     Stores additional pricing info for the Product's Tea
     """
-    topping = models.ForeignKey(Tea, on_delete=models.PROTECT)
+    tea = models.ForeignKey(Tea, on_delete=models.PROTECT)
     product = models.ForeignKey('Product', on_delete=models.PROTECT)
     price = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
     is_default = models.BooleanField(default=False)
     default_quantity = models.PositiveSmallIntegerField()
+
+    def __str__(self):
+        return str(self.tea)
 
 
 class OrderItemProductTea(models.Model):
@@ -372,48 +397,52 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
     is_active = models.BooleanField(default=True)
 
-    allowed_ice = models.ManyToManyField(IceChoice)
+    allowed_ice = models.ManyToManyField(IceChoice, blank=True)
     default_ice = models.ForeignKey(
         IceChoice,
         on_delete=models.PROTECT,
         related_name='default_products',
-        null=True)
+        null=True,
+        blank=True)
 
-    allowed_room = models.ManyToManyField(RoomChoice)
+    allowed_room = models.ManyToManyField(RoomChoice, blank=True)
     default_room = models.ForeignKey(
         RoomChoice,
         on_delete=models.PROTECT,
         related_name='default_products',
-        null=True)
+        null=True,
+        blank=True)
 
-    allowed_milks = models.ManyToManyField(Milk, through=ProductMilk)
+    allowed_milks = models.ManyToManyField(Milk, through=ProductMilk, blank=True)
     default_milk = models.ForeignKey(
         ProductMilk,
         on_delete=models.PROTECT,
         related_name='default_products',
-        null=True)
+        null=True,
+        blank=True)
 
-    allowed_sizes = models.ManyToManyField(Size, through=ProductSize)
+    allowed_sizes = models.ManyToManyField(Size, through=ProductSize, blank=True)
     default_size = models.ForeignKey(
         ProductSize,
         on_delete=models.PROTECT,
         related_name='default_products',
-        null=True)
+        null=True,
+        blank=True)
 
     allowed_sweeteners = models.ManyToManyField(Sweetener, through=ProductSweetener)
-    default_sweeteners = models.ManyToManyField(ProductSweetener, related_name='default_products')
+    default_sweeteners = models.ManyToManyField(ProductSweetener, related_name='default_products', blank=True)
 
     allowed_espresso_shots = models.ManyToManyField(EspressoShot, through=ProductEspressoShot)
-    default_espresso_shots = models.ManyToManyField(ProductEspressoShot, related_name='default_products')
+    default_espresso_shots = models.ManyToManyField(ProductEspressoShot, related_name='default_products', blank=True)
 
     allowed_juices = models.ManyToManyField(Juice, through=ProductJuice)
-    default_juices = models.ManyToManyField(ProductJuice, related_name='default_products')
+    default_juices = models.ManyToManyField(ProductJuice, related_name='default_products', blank=True)
 
     allowed_toppings = models.ManyToManyField(Topping, through=ProductTopping)
-    default_toppings = models.ManyToManyField(ProductTopping, related_name='default_products')
+    default_toppings = models.ManyToManyField(ProductTopping, related_name='default_products', blank=True)
 
     allowed_teas = models.ManyToManyField(Tea, through=ProductTea)
-    default_teas = models.ManyToManyField(ProductTea, related_name='default_products')
+    default_teas = models.ManyToManyField(ProductTea, related_name='default_products', blank=True)
 
     def __str__(self):
         return self.name
