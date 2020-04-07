@@ -1,8 +1,8 @@
 # Nightmare Forms
 
-The goal of this project is to be a collection of minimal examples of the various ways to make a complicated form.
+The goal of this project is to be a minimal example of the best way to implement a complicated form.
 
-The examples in this repo will implement the same order form for a coffee shop. The order form will demonstrate ways to implement these aspects of complicated forms:
+The example in this repo will implement the same order form for a coffee shop. The order form will demonstrate ways to implement these aspects of complicated forms:
 * The ability to add, remove, and modify items. (dynamic form)
 * Some fields will toggle other fields. (conditional/dependent fields)
 * Some fields will populate other fields with default values.
@@ -10,7 +10,7 @@ The examples in this repo will implement the same order form for a coffee shop. 
 * Disabled checkboxes
 * Detect changes
 
-All examples must at least have server-side validation and validation errors must appear next to the appropriate fields.
+The example also has server-side validation and validation errors will appear next to the appropriate fields.
 
 Nice to have:
 * IE11 compatibility without a complicated build pipeline. (so it's easy to implement in legacy apps)
@@ -36,13 +36,12 @@ Nice to have:
 ## Usage
 
 1. `python manage.py runserver`
+1. Also start front-end: `cd frontend; npm run serve`
 1. Visit: http://127.0.0.1:8000/
 
-## Example Descriptions
+## Ways To Implement The Complicated Forms
 
 ### Method 1: Server-Side Form
-
-<path>
 
 #### Main Components
 * /
@@ -73,7 +72,7 @@ Nice to have:
 * Issues with separation of concerns (display of the form is tightly coupled). This implemention uses the server side form logic to render the form, so having a slightly different implementation of the form in another place (like a mobile app that shows the form in a different layout) is going to require reverse engineering some of the server side logic.
 * Disabled checkboxes are difficult to implement. HTML forms do not submit disabled checkboxes, so your server side code needs to account for this and apply appropriate defaults.
 
-### Method 2: Client-side Form w/ jquery
+### Method 2: Client-side Form w/ jQuery
 
 #### Main Components
 * /
@@ -98,7 +97,7 @@ Nice to have:
       * Ember Data's JSON-API adapter seems to have a way to do this.
       * https://github.com/rjsf-team/react-jsonschema-form
 
-### Method 3: Client-side Form w/ Vue.js:
+### Method 3: Client-side Form w/ Vue.js (used by this repo)
 
 #### Main Components
 * Mostly same as "Client-side forms w/ jquery" except with Vue.js on the front-end.
@@ -112,4 +111,8 @@ Nice to have:
 
 ### Conclusion
 
-I think server-side forms make simple forms simpler and complex dynamic forms even more complex.
+I think server-side forms make simple forms simpler and complex dynamic forms even more complex. So, this repo will use the "Client-side Form w/ Vue.js" method.
+
+
+### Credit
+* Front-end is based on: https://medium.com/@rodrigosmaniotto/integrating-django-and-vuejs-with-vue-cli-3-and-webpack-loader-145c3b98501a
