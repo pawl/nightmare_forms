@@ -27,16 +27,20 @@ Nice to have:
 1. Create virtualenv: `virtualenv .venv`
 1. Activate the virtualenv: `source .venv/bin/activate`
 1. Install dependencies: `pip install -r requirements.txt`
-1. Ensure postgres is running (I use postgres.app on mac)
-1. Create the database with psql: `create database nightmare_forms;`
 1. Initialize database schema: `python manage.py migrate`
 1. Load initial data: `python manage.py loaddata coffee/fixtures/*`
 1. Create admin user: `python manage.py createsuperuser --email admin@example.com --username admin`
+1. `npm install`
 
 ## Usage
 
+In the first terminal:
 1. `python manage.py runserver`
-1. Also start front-end: `cd frontend; npm run serve`
+
+In the second terminal:
+1. Also start front-end: `npm run serve`
+
+In your browser:
 1. Visit: http://127.0.0.1:8000/
 
 ## Ways To Implement The Complicated Forms
@@ -115,4 +119,4 @@ I think server-side forms make simple forms simpler and complex dynamic forms ev
 
 
 ### Credit
-* Front-end is based on: https://medium.com/@rodrigosmaniotto/integrating-django-and-vuejs-with-vue-cli-3-and-webpack-loader-145c3b98501a
+* Starter template used: https://github.com/gtalarico/django-vue-template
