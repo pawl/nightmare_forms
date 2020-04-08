@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 1,
   "fields": {
     "sweetener": 1,
@@ -9,7 +9,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 2,
   "fields": {
     "sweetener": 2,
@@ -18,7 +18,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 3,
   "fields": {
     "sweetener": 3,
@@ -27,7 +27,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 4,
   "fields": {
     "sweetener": 4,
@@ -36,7 +36,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 5,
   "fields": {
     "sweetener": 5,
@@ -45,7 +45,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 6,
   "fields": {
     "sweetener": 6,
@@ -54,7 +54,7 @@
   }
 },
 {
-  "model": "coffee.productsweetener",
+  "model": "api.productsweetener",
   "pk": 7,
   "fields": {
     "sweetener": 7,

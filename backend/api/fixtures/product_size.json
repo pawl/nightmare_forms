@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 1,
   "fields": {
     "size": 1,
@@ -13,7 +13,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 2,
   "fields": {
     "size": 2,
@@ -26,7 +26,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 3,
   "fields": {
     "size": 3,
@@ -39,7 +39,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 4,
   "fields": {
     "size": 4,
@@ -52,7 +52,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 5,
   "fields": {
     "size": 2,
@@ -65,7 +65,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 6,
   "fields": {
     "size": 3,
@@ -78,7 +78,7 @@
   }
 },
 {
-  "model": "coffee.productsize",
+  "model": "api.productsize",
   "pk": 7,
   "fields": {
     "size": 4,

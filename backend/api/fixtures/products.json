@@ -1,6 +1,6 @@
 [
   {
-    "model": "coffee.Product",
+    "model": "api.Product",
     "pk": 1,
     "fields": {
       "name": "Frappucinno",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "coffee.Product",
+    "model": "api.Product",
     "pk": 2,
     "fields": {
       "name": "Coffee",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "coffee.Product",
+    "model": "api.Product",
     "pk": 3,
     "fields": {
       "name": "Bottled Water",
@@ -24,10 +24,18 @@
     }
   },
   {
-    "model": "coffee.Product",
+    "model": "api.Product",
     "pk": 4,
     "fields": {
       "name": "Milk",
+      "price": 2
+    }
+  },
+  {
+    "model": "api.Product",
+    "pk": 5,
+    "fields": {
+      "name": "Cappuccino",
       "price": 2
     }
   }

@@ -1,27 +1,27 @@
 [
   {
-    "model": "coffee.RoomChoice",
+    "model": "api.RoomChoice",
     "pk": 1,
     "fields": {
       "name": "No"
     }
   },
   {
-    "model": "coffee.RoomChoice",
+    "model": "api.RoomChoice",
     "pk": 2,
     "fields": {
       "name": "Light"
     }
   },
   {
-    "model": "coffee.RoomChoice",
+    "model": "api.RoomChoice",
     "pk": 3,
     "fields": {
       "name": "Regular"
     }
   },
   {
-    "model": "coffee.RoomChoice",
+    "model": "api.RoomChoice",
     "pk": 4,
     "fields": {
       "name": "Extra"

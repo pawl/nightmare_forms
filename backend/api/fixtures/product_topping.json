@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 1,
   "fields": {
     "topping": 16,
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 2,
   "fields": {
     "topping": 17,
@@ -20,7 +20,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 3,
   "fields": {
     "topping": 10,
@@ -30,7 +30,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 4,
   "fields": {
     "topping": 9,
@@ -40,7 +40,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 5,
   "fields": {
     "topping": 12,
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 6,
   "fields": {
     "topping": 13,
@@ -60,7 +60,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 7,
   "fields": {
     "topping": 14,
@@ -70,7 +70,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 8,
   "fields": {
     "topping": 15,
@@ -80,7 +80,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 9,
   "fields": {
     "topping": 2,
@@ -90,7 +90,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 10,
   "fields": {
     "topping": 5,
@@ -100,7 +100,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 11,
   "fields": {
     "topping": 11,
@@ -110,7 +110,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 12,
   "fields": {
     "topping": 9,
@@ -120,7 +120,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 13,
   "fields": {
     "topping": 10,
@@ -130,7 +130,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 14,
   "fields": {
     "topping": 12,
@@ -140,7 +140,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 15,
   "fields": {
     "topping": 13,
@@ -150,7 +150,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 16,
   "fields": {
     "topping": 14,
@@ -160,7 +160,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 17,
   "fields": {
     "topping": 15,
@@ -170,7 +170,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 18,
   "fields": {
     "topping": 2,
@@ -180,7 +180,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 19,
   "fields": {
     "topping": 5,
@@ -190,7 +190,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 20,
   "fields": {
     "topping": 18,
@@ -200,7 +200,7 @@
   }
 },
 {
-  "model": "coffee.producttopping",
+  "model": "api.producttopping",
   "pk": 21,
   "fields": {
     "topping": 19,

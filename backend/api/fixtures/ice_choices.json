@@ -1,27 +1,27 @@
 [
   {
-    "model": "coffee.IceChoice",
+    "model": "api.IceChoice",
     "pk": 1,
     "fields": {
       "name": "No"
     }
   },
   {
-    "model": "coffee.IceChoice",
+    "model": "api.IceChoice",
     "pk": 2,
     "fields": {
       "name": "Light"
     }
   },
   {
-    "model": "coffee.IceChoice",
+    "model": "api.IceChoice",
     "pk": 3,
     "fields": {
       "name": "Regular"
     }
   },
   {
-    "model": "coffee.IceChoice",
+    "model": "api.IceChoice",
     "pk": 4,
     "fields": {
       "name": "Extra"

@@ -1,20 +1,20 @@
 [
   {
-    "model": "coffee.Juice",
+    "model": "api.Juice",
     "pk": 1,
     "fields": {
       "name": "Apple"
     }
   },
   {
-    "model": "coffee.Juice",
+    "model": "api.Juice",
     "pk": 2,
     "fields": {
       "name": "Guava"
     }
   },
   {
-    "model": "coffee.Juice",
+    "model": "api.Juice",
     "pk": 3,
     "fields": {
       "name": "Peach"

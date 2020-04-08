@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.producttea",
+  "model": "api.producttea",
   "pk": 1,
   "fields": {
     "tea": 1,

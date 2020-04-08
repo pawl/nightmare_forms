@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.productflavor",
+  "model": "api.productflavor",
   "pk": 1,
   "fields": {
     "flavor": 1,

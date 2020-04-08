@@ -1,48 +1,48 @@
 [
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 1,
     "fields": {
       "name": "Small"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 2,
     "fields": {
       "name": "Medium"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 3,
     "fields": {
       "name": "Large"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 4,
     "fields": {
       "name": "X-Large"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 5,
     "fields": {
       "name": "Single"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 6,
     "fields": {
       "name": "Double"
     }
   },
   {
-    "model": "coffee.Size",
+    "model": "api.Size",
     "pk": 7,
     "fields": {
       "name": "Triple"

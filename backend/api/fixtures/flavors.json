@@ -1,6 +1,6 @@
 [
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 1,
     "fields": {
       "name": "Caramel Brulee",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 2,
     "fields": {
       "name": "Mocha",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 3,
     "fields": {
       "name": "Skinny Mocha",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 4,
     "fields": {
       "name": "Toasted White Chocolate Mocha",
@@ -32,7 +32,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 5,
     "fields": {
       "name": "White Chocolate Mocha",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 1,
     "fields": {
       "name": "Caramel",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 2,
     "fields": {
       "name": "Chestnut Praline",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 3,
     "fields": {
       "name": "Cinnamon Dolce",
@@ -64,7 +64,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 4,
     "fields": {
       "name": "Classic",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 5,
     "fields": {
       "name": "Hazelnut",
@@ -80,7 +80,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 6,
     "fields": {
       "name": "Peppermint",
@@ -88,7 +88,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 7,
     "fields": {
       "name": "Raspberry",
@@ -96,7 +96,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 8,
     "fields": {
       "name": "Sugar Free Cinnamon Dolce",
@@ -104,7 +104,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 9,
     "fields": {
       "name": "Sugar Free Vanilla",
@@ -112,7 +112,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 10,
     "fields": {
       "name": "Toffee Nut",
@@ -120,7 +120,7 @@
     }
   },
   {
-    "model": "coffee.Flavor",
+    "model": "api.Flavor",
     "pk": 11,
     "fields": {
       "name": "Vanilla",

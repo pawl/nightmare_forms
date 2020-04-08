@@ -1,27 +1,27 @@
 [
   {
-    "model": "coffee.TempChoice",
+    "model": "api.TempChoice",
     "pk": 1,
     "fields": {
       "name": "Cold"
     }
   },
   {
-    "model": "coffee.TempChoice",
+    "model": "api.TempChoice",
     "pk": 2,
     "fields": {
       "name": "Extra Hot"
     }
   },
   {
-    "model": "coffee.TempChoice",
+    "model": "api.TempChoice",
     "pk": 3,
     "fields": {
       "name": "Warm"
     }
   },
   {
-    "model": "coffee.TempChoice",
+    "model": "api.TempChoice",
     "pk": 4,
     "fields": {
       "name": "Steamed"

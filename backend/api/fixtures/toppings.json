@@ -1,6 +1,6 @@
 [
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 1,
     "fields": {
       "name": "Caramel Brulee",
@@ -9,7 +9,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 2,
     "fields": {
       "name": "Cascara Topping",
@@ -18,7 +18,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 3,
     "fields": {
       "name": "Chestnut Praline",
@@ -27,7 +27,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 4,
     "fields": {
       "name": "Chocolate Curls",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 5,
     "fields": {
       "name": "Cinnamon Dolce Sprinkles",
@@ -45,7 +45,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 6,
     "fields": {
       "name": "Pumpkin Spice",
@@ -54,7 +54,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 7,
     "fields": {
       "name": "Smoked Sea Salt",
@@ -63,7 +63,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 8,
     "fields": {
       "name": "Holiday Sugar Sprinkles",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 9,
     "fields": {
       "name": "Caramel Drizzle",
@@ -81,7 +81,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 10,
     "fields": {
       "name": "Mocha Drizzle",
@@ -90,7 +90,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 11,
     "fields": {
       "name": "Whipped Cream",
@@ -99,7 +99,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 12,
     "fields": {
       "name": "Chocolate Powder",
@@ -108,7 +108,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 13,
     "fields": {
       "name": "Cinnamon Powder",
@@ -117,7 +117,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 14,
     "fields": {
       "name": "Nutmeg Powder",
@@ -126,7 +126,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 15,
     "fields": {
       "name": "Vanilla Powder",
@@ -135,7 +135,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 16,
     "fields": {
       "name": "Cold Foam",
@@ -144,7 +144,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 17,
     "fields": {
       "name": "Vanilla Sweet Cream Cold Foam",
@@ -153,7 +153,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 18,
     "fields": {
       "name": "Smokey Butterscotch Sugar Topping",
@@ -162,7 +162,7 @@
     }
   },
   {
-    "model": "coffee.Topping",
+    "model": "api.Topping",
     "pk": 19,
     "fields": {
       "name": "Toasted Honey Topping",

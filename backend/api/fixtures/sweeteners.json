@@ -1,48 +1,48 @@
 [
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 1,
     "fields": {
       "name": "Equal (blue)"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 2,
     "fields": {
       "name": "Honey"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 3,
     "fields": {
       "name": "Sugar in the raw"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 4,
     "fields": {
       "name": "Saccharin (pink)"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 5,
     "fields": {
       "name": "Splenda"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 6,
     "fields": {
       "name": "Sugar"
     }
   },
   {
-    "model": "coffee.Sweetener",
+    "model": "api.Sweetener",
     "pk": 7,
     "fields": {
       "name": "Whole Earth Stevia w/ Monk Fruit"

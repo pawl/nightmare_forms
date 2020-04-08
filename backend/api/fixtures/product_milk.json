@@ -1,6 +1,6 @@
 [
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 1,
   "fields": {
     "milk": 2,
@@ -10,7 +10,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 2,
   "fields": {
     "milk": 5,
@@ -20,7 +20,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 3,
   "fields": {
     "milk": 6,
@@ -30,7 +30,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 4,
   "fields": {
     "milk": 8,
@@ -40,7 +40,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 5,
   "fields": {
     "milk": 9,
@@ -50,7 +50,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 6,
   "fields": {
     "milk": 7,
@@ -60,7 +60,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 7,
   "fields": {
     "milk": 1,
@@ -70,7 +70,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 8,
   "fields": {
     "milk": 4,
@@ -80,7 +80,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 9,
   "fields": {
     "milk": 3,
@@ -90,7 +90,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 10,
   "fields": {
     "milk": 1,
@@ -100,7 +100,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 11,
   "fields": {
     "milk": 2,
@@ -110,7 +110,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 12,
   "fields": {
     "milk": 3,
@@ -120,7 +120,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 13,
   "fields": {
     "milk": 4,
@@ -130,7 +130,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 14,
   "fields": {
     "milk": 5,
@@ -140,7 +140,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 15,
   "fields": {
     "milk": 6,
@@ -150,7 +150,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 16,
   "fields": {
     "milk": 7,
@@ -160,7 +160,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 17,
   "fields": {
     "milk": 8,
@@ -170,7 +170,7 @@
   }
 },
 {
-  "model": "coffee.productmilk",
+  "model": "api.productmilk",
   "pk": 18,
   "fields": {
     "milk": 9,

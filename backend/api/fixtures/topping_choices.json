@@ -1,27 +1,27 @@
 [
   {
-    "model": "coffee.ToppingChoice",
+    "model": "api.ToppingChoice",
     "pk": 1,
     "fields": {
       "name": "No"
     }
   },
   {
-    "model": "coffee.ToppingChoice",
+    "model": "api.ToppingChoice",
     "pk": 2,
     "fields": {
       "name": "Light"
     }
   },
   {
-    "model": "coffee.ToppingChoice",
+    "model": "api.ToppingChoice",
     "pk": 3,
     "fields": {
       "name": "Regular"
     }
   },
   {
-    "model": "coffee.ToppingChoice",
+    "model": "api.ToppingChoice",
     "pk": 4,
     "fields": {
       "name": "Extra"

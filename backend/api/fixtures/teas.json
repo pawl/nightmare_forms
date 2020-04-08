@@ -1,27 +1,27 @@
 [
   {
-    "model": "coffee.Tea",
+    "model": "api.Tea",
     "pk": 1,
     "fields": {
       "name": "Chai"
     }
   },
   {
-    "model": "coffee.Tea",
+    "model": "api.Tea",
     "pk": 2,
     "fields": {
       "name": "Green"
     }
   },
   {
-    "model": "coffee.Tea",
+    "model": "api.Tea",
     "pk": 3,
     "fields": {
       "name": "Passion Tango"
     }
   },
   {
-    "model": "coffee.Tea",
+    "model": "api.Tea",
     "pk": 4,
     "fields": {
       "name": "White"
