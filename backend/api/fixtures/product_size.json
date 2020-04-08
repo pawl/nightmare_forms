@@ -1,0 +1,93 @@
+[
+{
+  "model": "coffee.productsize",
+  "pk": 1,
+  "fields": {
+    "size": 1,
+    "product": 5,
+    "price": "0.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 1,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 2,
+  "fields": {
+    "size": 2,
+    "product": 5,
+    "price": "1.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 1,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 3,
+  "fields": {
+    "size": 3,
+    "product": 5,
+    "price": "2.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 2,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 4,
+  "fields": {
+    "size": 4,
+    "product": 5,
+    "price": "3.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 2,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 5,
+  "fields": {
+    "size": 2,
+    "product": 4,
+    "price": "0.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 0,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 6,
+  "fields": {
+    "size": 3,
+    "product": 4,
+    "price": "0.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 0,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsize",
+  "pk": 7,
+  "fields": {
+    "size": 4,
+    "product": 4,
+    "price": "0.00",
+    "default_flavor_pumps": 0,
+    "default_espresso_shots": 0,
+    "default_tea_quantity": 0,
+    "is_active": true
+  }
+}
+]

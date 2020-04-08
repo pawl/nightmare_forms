@@ -1,0 +1,212 @@
+[
+{
+  "model": "coffee.producttopping",
+  "pk": 1,
+  "fields": {
+    "topping": 16,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 2,
+  "fields": {
+    "topping": 17,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 3,
+  "fields": {
+    "topping": 10,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 4,
+  "fields": {
+    "topping": 9,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 5,
+  "fields": {
+    "topping": 12,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 6,
+  "fields": {
+    "topping": 13,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 7,
+  "fields": {
+    "topping": 14,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 8,
+  "fields": {
+    "topping": 15,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 9,
+  "fields": {
+    "topping": 2,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 10,
+  "fields": {
+    "topping": 5,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 11,
+  "fields": {
+    "topping": 11,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 12,
+  "fields": {
+    "topping": 9,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 13,
+  "fields": {
+    "topping": 10,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 14,
+  "fields": {
+    "topping": 12,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 15,
+  "fields": {
+    "topping": 13,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 16,
+  "fields": {
+    "topping": 14,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 17,
+  "fields": {
+    "topping": 15,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 18,
+  "fields": {
+    "topping": 2,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 19,
+  "fields": {
+    "topping": 5,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 20,
+  "fields": {
+    "topping": 18,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.producttopping",
+  "pk": 21,
+  "fields": {
+    "topping": 19,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+}
+]

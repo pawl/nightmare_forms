@@ -1,0 +1,37 @@
+[
+  {
+    "model": "coffee.ToppingCategory",
+    "pk": 1,
+    "fields": {
+      "name": "Cold Foam"
+    }
+  },
+  {
+    "model": "coffee.ToppingCategory",
+    "pk": 2,
+    "fields": {
+      "name": "Drizzle"
+    }
+  },
+  {
+    "model": "coffee.ToppingCategory",
+    "pk": 3,
+    "fields": {
+      "name": "Powder"
+    }
+  },
+  {
+    "model": "coffee.ToppingCategory",
+    "pk": 4,
+    "fields": {
+      "name": "Whipped Cream"
+    }
+  },
+  {
+    "model": "coffee.ToppingCategory",
+    "pk": 5,
+    "fields": {
+      "name": "Other"
+    }
+  }
+]

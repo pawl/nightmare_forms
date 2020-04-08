@@ -1,0 +1,12 @@
+[
+{
+  "model": "coffee.producttea",
+  "pk": 1,
+  "fields": {
+    "tea": 1,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+}
+]

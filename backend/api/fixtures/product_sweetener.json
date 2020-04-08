@@ -1,0 +1,65 @@
+[
+{
+  "model": "coffee.productsweetener",
+  "pk": 1,
+  "fields": {
+    "sweetener": 1,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 2,
+  "fields": {
+    "sweetener": 2,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 3,
+  "fields": {
+    "sweetener": 3,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 4,
+  "fields": {
+    "sweetener": 4,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 5,
+  "fields": {
+    "sweetener": 5,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 6,
+  "fields": {
+    "sweetener": 6,
+    "product": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productsweetener",
+  "pk": 7,
+  "fields": {
+    "sweetener": 7,
+    "product": 5,
+    "is_active": true
+  }
+}
+]

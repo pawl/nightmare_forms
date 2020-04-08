@@ -1,0 +1,182 @@
+[
+{
+  "model": "coffee.productmilk",
+  "pk": 1,
+  "fields": {
+    "milk": 2,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 2,
+  "fields": {
+    "milk": 5,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 3,
+  "fields": {
+    "milk": 6,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 4,
+  "fields": {
+    "milk": 8,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 5,
+  "fields": {
+    "milk": 9,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 6,
+  "fields": {
+    "milk": 7,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 7,
+  "fields": {
+    "milk": 1,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 8,
+  "fields": {
+    "milk": 4,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 9,
+  "fields": {
+    "milk": 3,
+    "product": 5,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 10,
+  "fields": {
+    "milk": 1,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 11,
+  "fields": {
+    "milk": 2,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 12,
+  "fields": {
+    "milk": 3,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 13,
+  "fields": {
+    "milk": 4,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 14,
+  "fields": {
+    "milk": 5,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 15,
+  "fields": {
+    "milk": 6,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 16,
+  "fields": {
+    "milk": 7,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 17,
+  "fields": {
+    "milk": 8,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+},
+{
+  "model": "coffee.productmilk",
+  "pk": 18,
+  "fields": {
+    "milk": 9,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+}
+]

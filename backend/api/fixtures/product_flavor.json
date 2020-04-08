@@ -1,0 +1,12 @@
+[
+{
+  "model": "coffee.productflavor",
+  "pk": 1,
+  "fields": {
+    "flavor": 1,
+    "product": 4,
+    "price": "0.00",
+    "is_active": true
+  }
+}
+]
