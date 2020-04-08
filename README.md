@@ -28,7 +28,7 @@ Nice to have:
 1. Activate the virtualenv: `source .venv/bin/activate`
 1. Install dependencies: `pip install -r requirements.txt`
 1. Initialize database schema: `python manage.py migrate`
-1. Load initial data: `python manage.py loaddata coffee/fixtures/*`
+1. Load initial data: `python manage.py loaddata backend/api/fixtures/*`
 1. Create admin user: `python manage.py createsuperuser --email admin@example.com --username admin`
 1. `npm install`
 
