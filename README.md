@@ -43,7 +43,7 @@ In the second terminal:
 In your browser:
 1. Visit: http://127.0.0.1:8000/
 
-## Ways To Implement The Complicated Forms
+## Ways To Implement The Complicated Form
 
 ### Method 1: Server-Side Form
 
@@ -55,9 +55,7 @@ In your browser:
     * GET w/ parameters - allows reloading an item's form with the available choices and defaults based on the current selections
 * /`<id>`/
     * GET - loads order form with existing items
-* Django Formsets
-* Reloading the form when changes are made
-* Disabling fields
+* Django Forms & Formsets - handle rendering the form and processing submission
 
 #### Pros
 * It's very easy to get validation errors to appear next to fields.
@@ -70,9 +68,9 @@ In your browser:
 * Requires supporting multiple ways to load the form.
   * Forms must be built to allow loading a single item (that may not exist yet) with only some of the values filled in, so it can load the item form with the correct choices and defaults based on your current selection.
   * Forms must also be built to set the initial field values to what's currently stored in the database, so we can detect what changed.
-* The page must be reloaded when the form is submitted.
+  * Requires custom django template tags for displaying ChoiceField choices: https://github.com/pawl/django_choicefield_display_example
 * Dealing with paired inputs nested in items is difficult.
-  * Nested formsets are really complicated, so you end up creating a field for each possible value.
+  * Nested formsets are really complicated, so you end up creating a field for each possible value. This also requires some hacks to disable the field.
 * Issues with separation of concerns (display of the form is tightly coupled). This implemention uses the server side form logic to render the form, so having a slightly different implementation of the form in another place (like a mobile app that shows the form in a different layout) is going to require reverse engineering some of the server side logic.
 * Disabled checkboxes are difficult to implement. HTML forms do not submit disabled checkboxes, so your server side code needs to account for this and apply appropriate defaults.
 
@@ -84,8 +82,9 @@ In your browser:
 * /choices/
     * GET - returns available choices and defaults for item fields
 * /order/ -
-    * GET  -
+    * GET  - returns the current state of the order
     * POST - validates data and saves the changes
+* Django Forms or DRF Serializers - handle back-end validation
 
 #### Pros
 * No need to refresh on each field change
@@ -116,7 +115,6 @@ In your browser:
 ### Conclusion
 
 I think server-side forms make simple forms simpler and complex dynamic forms even more complex. So, this repo will use the "Client-side Form w/ Vue.js" method.
-
 
 ### Credit
 * Starter template used: https://github.com/gtalarico/django-vue-template
