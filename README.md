@@ -17,7 +17,9 @@ This repo uses Django for the back-end.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Examples](#examples)
+- [Ways To Implement The Complicated Form](#ways-to-implement-the-complicated-form)
+- [Conclusion](#conclusion)
+- [Credit](#credit)
 
 ## Installation
 
