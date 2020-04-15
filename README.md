@@ -18,9 +18,9 @@ This repo uses Django for the back-end.
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Ways To Implement The Complicated Form](#ways-to-implement-the-complicated-form)
-  1. [Method 1: Server-Side Form](#method-1-server-side-form)
-  1. [Method 2: Client-side Form w/ jQuery](#method-2-client-side-form-w-jquery)
-  1. [Method 3: Client-side Form w/ Vue.js](#method-3-client-side-form-w-vuejs-used-by-this-repo)
+    1. [Method 1: Server-Side Form](#method-1-server-side-form)
+    1. [Method 2: Client-side Form w/ jQuery](#method-2-client-side-form-w-jquery)
+    1. [Method 3: Client-side Form w/ Vue.js](#method-3-client-side-form-w-vuejs-used-by-this-repo)
 1. [Conclusion](#conclusion)
 1. [Credit](#credit)
 
