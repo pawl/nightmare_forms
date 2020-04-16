@@ -12,14 +12,14 @@
     </v-card-text>
     <v-card-text>
       <v-autocomplete
-        v-model="model"
-        :items="items"
+        v-model="baseProduct"
+        :items="baseProducts"
         :loading="isLoading"
         color="white"
         hide-no-data
         hide-selected
-        item-text="Description"
-        item-value="API"
+        item-text="name"
+        item-value="id"
         label="Drinks"
         placeholder="Start typing to Search"
         prepend-icon="mdi-database-search"
@@ -28,24 +28,33 @@
     </v-card-text>
     <v-divider></v-divider>
     <v-expand-transition>
-      <v-list v-if="model">
-        <v-list-item
-          v-for="(field, i) in fields"
-          :key="i"
-        >
-          <v-list-item-content>
-            <v-list-item-title v-text="field.value"></v-list-item-title>
-            <v-list-item-subtitle v-text="field.key"></v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+      <div class="pa-2" v-if="baseProduct">
+        <v-radio-group
+          v-model="customizedProduct.size"
+          v-if="baseProduct.allowed_sizes.length"
+          label="Size:">
+          <v-radio
+            v-for="allowedSize in baseProduct.allowed_sizes"
+            :key="allowedSize"
+            :label="allowedSize.name"
+            :value="allowedSize.id"
+          ></v-radio>
+        </v-radio-group>
+      </div>
     </v-expand-transition>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn
-        :disabled="!model"
-        color="grey darken-3"
-        @click="model = null"
+        :disabled="!baseProduct"
+        @click="shareCustomizedProduct()"
+        color="primary"
+      >
+        Share
+        <v-icon right>mdi-share</v-icon>
+      </v-btn>
+      <v-btn
+        :disabled="!baseProduct"
+        @click="baseProduct = null"
       >
         Clear
         <v-icon right>mdi-close-circle</v-icon>
@@ -60,36 +69,27 @@
   export default {
     data: () => ({
       descriptionLimit: 60,
-      entries: [],
+      baseProducts: [],
       isLoading: false,
-      model: null,
+      baseProduct: null,
+      customizedProduct: {
+        size: null,
+        room: null,
+        ice: null,
+        milk: null,
+      },
     }),
-
-    computed: {
-      fields () {
-        if (!this.model) return []
-
-        return Object.keys(this.model).map(key => {
-          return {
-            key,
-            value: this.model[key] || 'n/a',
-          }
-        })
-      },
-      items () {
-        return this.entries.map(entry => {
-          const Description = entry.name.length > this.descriptionLimit
-            ? entry.name.slice(0, this.descriptionLimit) + '...'
-            : entry.name
-
-          return Object.assign({}, entry, { Description })
-        })
-      },
+    methods: {
+      shareCustomizedProduct: function () {
+        // TODO: POST customized product to endpoint
+        alert('Hello ' + this.customizedProduct.size + '!')
+      }
     },
+    computed: {},
     created() {
       axios.get('api/products/')
            .then(response => {
-             this.entries = response.data
+             this.baseProducts = response.data
            })
            .catch(err => {
              console.log(err)

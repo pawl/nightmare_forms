@@ -14,7 +14,7 @@
             sm="8"
             md="4"
           >
-            <ProductDropdown/>
+            <CustomizerForm/>
           </v-col>
         </v-row>
       </v-container>
@@ -23,13 +23,13 @@
 </template>
 
 <script>
-import ProductDropdown from './components/ProductDropdown';
+import CustomizerForm from './components/CustomizerForm';
 
 export default {
   name: 'App',
 
   components: {
-    ProductDropdown,
+    CustomizerForm,
   },
 
   data: () => ({
