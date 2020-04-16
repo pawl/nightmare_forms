@@ -1,6 +1,6 @@
 # Nightmare Forms
 
-The goal of this project is to be a minimal example of the best way to implement a complicated form.
+The goal of this project is to be an example of the best way to implement a complicated form.
 
 The example in this repo will implement an order form for a coffee shop. The order form will demonstrate these aspects of complicated forms:
 * The ability to add, remove, and modify existing items. (dynamic form)
@@ -18,7 +18,7 @@ This repo uses Django for the back-end.
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Ways To Implement The Complicated Form](#ways-to-implement-the-complicated-form)
-    1. [Method 1: Server-Side Form](#method-1-server-side-form)
+    1. [Method 1: Mostly Server-Side Form w/jQuery](#method-1-mostly-server-side-form-w-jquery)
     1. [Method 2: Client-side Form w/ jQuery](#method-2-client-side-form-w-jquery)
     1. [Method 3: Client-side Form w/ Vue.js](#method-3-client-side-form-w-vuejs-used-by-this-repo)
 1. [Conclusion](#conclusion)
@@ -48,7 +48,7 @@ In your browser:
 
 ## Ways To Implement The Complicated Form
 
-### Method 1: Server-Side Form
+### Method 1: Mostly Server-Side Form w/ jQuery
 
 #### Main Components
 * /
@@ -66,14 +66,14 @@ In your browser:
 * No extra code for serializing and deserializing. (HTML forms handle this)
 
 #### Cons
+* The server-side templates need to duplicate all the logic for dynamic fields that you implemented in javascript, because the back-end may need to re-render the form with your current selection when there's invalid submit or when a choice is changed.
 * Large portions of the form must be reloaded when changes to some fields occur. This requires a network request and can provide a bad user experience if the response isn't quick.
   * When certain fields are changed, you need javascript to send the item's current values to an endpoint that sends back a replacement for the item's form with the new choices and defaults.
 * Requires supporting multiple ways to load the form.
   * On initial GET, the forms must set the initial field values to what's currently stored in the database for existing items. This same form must also allow loading an empty form for create.
-  * When changing fields, the forms must allow loading a single item (that may not exist yet) with only some of the values filled in, so it can load the item form with the correct choices and defaults based on your current selection. You may need to take some things stored on the existing item into account (your logic may rely on a previously selected value, for example: you may clear out some other fields if a certain field is changed).
+  * When changing fields, the forms must allow loading a single item (that may not exist yet) with only some of the values filled in. This allows loading the item form with the new choices and defaults based on your current selection. You may need to take some things stored on the existing item into account (for example: you may clear out some other fields if a certain field is changed to a different value).
   * On POST, the same forms must allow modify existing items and/or creating new ones.
-  * Splitting up this functionality into separate forms may result in a lot of duplicated code.
-* The server-side templates need to duplicate all the logic for dynamic fields that you implemented in javascript, because the back-end may need to re-render the form with your current selection when there's invalid submit or when a choice is changed.
+  * All this logic mainly ends up lumped into two form objects (one for the Order-level and another for the item-level). Splitting up this functionality into different Form objects on the server side may result in a lot of duplicated code for initializing the form.
 * Requires custom django template tags for displaying ChoiceField choices: https://github.com/pawl/django_choicefield_display_example
 * Dealing with paired inputs nested in items is difficult.
   * Nested dynamic fields + Django's built-in formsets is really complicated.
@@ -114,6 +114,7 @@ In your browser:
     * Potential solutions:
       * Ember Data's JSON-API adapter seems to have a way to do this.
       * https://github.com/rjsf-team/react-jsonschema-form
+* Requires building data-layer (API endpoints). Although, API endpoints may have some long-term value if you intend to build a mobile app or expose a public API to customers.
 
 ------------
 
@@ -123,7 +124,7 @@ In your browser:
 * Mostly same as "Client-side forms w/ jQuery" except with Vue.js on the front-end.
 
 #### Pros
-* More maintainable than jQuery, because it automatically keeps the DOM/HTML in sync with your javascript objects. Two-way binding/reactive programming makes things easier to refactor. It also encourages you to make things in a more testable way by making you break your code into components and not use global variables. Vue-cli also helps set up linting, ES6 transpiling, webpack, and live reloading for a better development experience.
+* More maintainable than jQuery, because it automatically keeps the DOM/HTML in sync with your javascript objects. Two-way binding/reactive programming and being able to reference js objects from templates makes things easier to refactor and doesn't require nearly as much selector and DOM/HTML manipulation code. Vue's component structure also encourages you to make things in a more testable way by making you break your code into components and not use global variables. Vue-cli also helps set up linting, ES6 transpiling, webpack, and live reloading for a better development experience.
   * See: https://dev.to/tsanak/make-your-life-easier-with-vuejs-4mj5
 
 #### Cons
@@ -134,7 +135,7 @@ In your browser:
 
 ## Conclusion
 
-I think server-side forms make simple forms simpler and complex dynamic forms even more complex. So, this repo will use the "Client-side Form w/ Vue.js" method.
+I think server-side forms make simple forms simpler and complex dynamic forms even more complex. Vue.js also offers more maintainable client-side code with two-way binding and better code organization. So, this repo will use the "Client-side Form w/ Vue.js" method.
 
 ## Credit
 * Starter template used: https://github.com/gtalarico/django-vue-template
