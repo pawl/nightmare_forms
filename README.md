@@ -69,16 +69,16 @@ In your browser visit: http://127.0.0.1:8000/
 * Large portions of the form must be reloaded when changes to some fields occur. This requires a network request and can provide a bad user experience if the response isn't quick.
   * When certain fields are changed, you need javascript to send the item's current values to an endpoint that sends back a replacement for the item's form with the new choices and defaults.
 * Requires supporting multiple ways to load the form.
-  * On initial GET, the forms must set the initial field values to what's currently stored in the database for existing items. This same form must also allow loading an empty form for create.
+  * On initial GET, the forms must set the initial field values to what's currently stored in the database for existing items. This same form must also allow loading an empty form when creating new orders.
   * When changing fields, the forms must allow loading a single item (that may not exist yet) with only some of the values filled in. This allows loading the item form with the new choices and defaults based on your current selection. You may need to take some things stored on the existing item into account (for example: you may clear out some other fields if a certain field is changed to a different value).
-  * On POST, the same forms must allow modify existing items and/or creating new ones.
-  * All this logic mainly ends up lumped into two form objects (one for the Order-level and another for the item-level). Splitting up this functionality into different Form objects on the server side may result in a lot of duplicated code for initializing the form.
+  * On POST, the same forms must allow modifying existing items and/or creating new ones.
+  * All this logic mainly ends up lumped into two Form objects (one for the order-level and another for the item-level). Splitting up this functionality into different Form objects on the server side may result in a lot of duplicated code for initializing the form.
 * Requires custom django template tags for displaying ChoiceField choices: https://github.com/pawl/django_choicefield_display_example
 * Dealing with paired inputs nested in items is difficult.
   * Nested dynamic fields + Django's built-in formsets is really complicated.
-* You have to create hidden fields for each possible value and use javascript to show/hide + disable the fields. Or you will need to render the field with javascript and duplicate that logic on the server-side.
+* You have to create hidden disabled inputs for all possible input that are not currently enabled and use javascript to show/hide + disable those inputs as appropriate. Or you will need to render the field with javascript and duplicate that logic on the server-side. Or you will need to refresh the form to get the server-side to re-render the form.
 * Issues with separation of concerns (display of the form is tightly coupled). This implemention uses the server side form logic to render the form, so having a slightly different implementation of the form in another place (like a mobile app that shows the form in a different layout) is going to require reverse engineering some of the server side logic.
-* Disabled checkboxes require some hacks to implement. HTML forms do not submit both disabled checkboxes and unchecked checkboxes.
+* Disabled checkboxes require some hacks to implement. HTML forms do not submit data for both disabled checkboxes and unchecked checkboxes.
 
 ------------
 
@@ -101,10 +101,12 @@ In your browser visit: http://127.0.0.1:8000/
 * The current state of the form is stored only the client-side until the form is saved, so no need to refresh on each field change.
   * No need to share the current state back and forth between back-end and front-end when some fields change. All the possible choices are loaded when the form initially loads.
   * Better user experience if the form would be reloading often.
+  * I think this makes things easier to understand. Passing around objects only when the form is loaded or saved seems easier to think about.
 * You don't need logic for rendering the form on both the client-side and server-side. You just need the code on the client-side for rendering the form and you use the data layer (API endpoint) to get the current state of items and to sync things up with the database (or send back validation errors to display next to fields).
-  * No more server-side hacks to render the form with all possible choices as hidden disabled fields to be enabled/shown by client-side javascript.
+  * No more server-side hacks to render the form with all possible inputs as hidden disabled to be enabled/shown by client-side javascript.
 * Better separation of concerns. You could use the APIs to implement this form in a separate mobile app.
 * IE11 compatibility without a complicated build pipeline.
+* Nested fields (especially nested pairs of fields) are better represented as JSON.
 
 #### Cons
 * The jQuery code for cloning + filling in new form components and keeping the DOM/HTML in sync with the javascript objects quickly becomes very complicated with lots of duplicated selectors and scattered helper functions and change events. This can make refactoring difficult. This assumes you're not doing a fancy component structure with ES6.
