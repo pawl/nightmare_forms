@@ -8,7 +8,7 @@ The example in this repo will implement an order form for a coffee shop. The ord
 * Some fields will populate other fields with default values.
 * Nested fields with paired inputs.
 * Disabled checkboxes
-* Detect and log changes between previous edits
+* Detect and log changes between edits
 * Both client-side & server-side validation errors appear next to the appropriate fields.
 
 This repo uses Django for the back-end.
@@ -18,7 +18,7 @@ This repo uses Django for the back-end.
 1. [Installation](#installation)
 1. [Usage](#usage)
 1. [Ways To Implement The Complicated Form](#ways-to-implement-the-complicated-form)
-    1. [Method 1: Mostly Server-Side Form w/jQuery](#method-1-mostly-server-side-form-w-jquery)
+    1. [Method 1: Mostly Server-side Form w/jQuery](#method-1-mostly-server-side-form-w-jquery)
     1. [Method 2: Client-side Form w/ jQuery](#method-2-client-side-form-w-jquery)
     1. [Method 3: Client-side Form w/ Vue.js](#method-3-client-side-form-w-vuejs-used-by-this-repo)
 1. [Conclusion](#conclusion)
@@ -33,31 +33,30 @@ This repo uses Django for the back-end.
 1. Initialize database schema: `python manage.py migrate`
 1. Load initial data: `python manage.py loaddata backend/api/fixtures/*`
 1. Create admin user: `python manage.py createsuperuser --email admin@example.com --username admin`
-1. `npm install`
+1. Install front-end dependencies: `npm install`
 
 ## Usage
 
-In the first terminal:
-1. `python manage.py runserver`
+Start the back-end in your first terminal:
+`python manage.py runserver`
 
-In the second terminal:
-1. Also start front-end: `npm run serve`
+Start the front-end in your the second terminal:
+`npm run serve`
 
-In your browser:
-1. Visit: http://127.0.0.1:8000/
+In your browser visit: http://127.0.0.1:8000/
 
 ## Ways To Implement The Complicated Form
 
-### Method 1: Mostly Server-Side Form w/ jQuery
+### Method 1: Mostly Server-side Form w/ jQuery
 
 #### Main Components
 * /
     * GET - loads empty order form
     * POST - validates data and saves the changes to the order
-* /orderitem/
-    * GET w/ parameters - allows reloading an item's form with the available choices and defaults based on the current selections
 * /`<id>`/
     * GET - loads order form with existing items
+* /orderitem/
+    * GET w/ parameters - allows reloading an item's form with the available choices and defaults based on the current selections
 * Django Forms & Formsets - handle rendering the form and processing submission
 
 #### Pros
@@ -94,6 +93,8 @@ In your browser:
 * /order/ -
     * GET  - returns the current state of the order
     * POST - validates data and saves the changes
+* Hidden HTML template for the jQuery code to clone/show/hide
+* jQuery on the client-side for rendering the form
 * Django Forms or DRF Serializers - handle back-end validation
 
 #### Pros
