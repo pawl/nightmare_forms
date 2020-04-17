@@ -35,7 +35,7 @@
           label="Size:">
           <v-radio
             v-for="allowedSize in baseProduct.allowed_sizes"
-            :key="allowedSize"
+            :key="allowedSize.id"
             :label="allowedSize.name"
             :value="allowedSize.id"
           ></v-radio>
@@ -47,7 +47,7 @@
           label="Ice:">
           <v-radio
             v-for="allowedIce in baseProduct.allowed_ice"
-            :key="allowedIce"
+            :key="allowedIce.id"
             :label="allowedIce.name"
             :value="allowedIce.id"
           ></v-radio>
@@ -59,7 +59,7 @@
           label="Room:">
           <v-radio
             v-for="allowedRoom in baseProduct.allowed_room"
-            :key="allowedRoom"
+            :key="allowedRoom.id"
             :label="allowedRoom.name"
             :value="allowedRoom.id"
           ></v-radio>
