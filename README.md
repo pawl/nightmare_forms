@@ -2,7 +2,7 @@
 
 The goal of this project is to be an example of the best way to implement a complicated form.
 
-The example in this repo will implement an order form for a coffee shop. The order form will demonstrate these aspects of complicated forms:
+The example in this repo will implement a form for customizing drinks. The form will demonstrate these aspects of complicated forms:
 * The ability to add, remove, and modify existing items. (dynamic form)
 * Some fields will toggle other fields. (conditional/dependent fields)
 * Some fields will populate other fields with default values.

@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 from django.db import models
 from django.utils import timezone
 
@@ -29,13 +27,14 @@ class ProductEspressoShot(models.Model):
         return str(self.espresso_shot)
 
 
-class OrderItemProductEspressoShot(models.Model):
+class CustomizedProductEspressoShot(models.Model):
     """
     Intermediate model for OrderItem <-> ProductEspressoShot, stores quantity
 
     Allows an OrderItem to have multiple types of EspressoShots with their own quantity
     """
     product_espresso_shot = models.ForeignKey(ProductEspressoShot, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -63,13 +62,14 @@ class ProductSweetener(models.Model):
         return str(self.sweetener)
 
 
-class OrderItemProductSweetener(models.Model):
+class CustomizedProductSweetener(models.Model):
     """
     Intermediate model for OrderItem <-> ProductSweetener, stores quantity
 
     Allows an OrderItem to have multiple types of Sweeteners with their own quantity
     """
     product_sweetener = models.ForeignKey(ProductSweetener, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -183,13 +183,14 @@ class ProductJuice(models.Model):
         return str(self.juice)
 
 
-class OrderItemProductJuice(models.Model):
+class CustomizedProductJuice(models.Model):
     """
     Intermediate model for OrderItem <-> ProductJuice, stores quantity
 
     Allows an OrderItem to have multiple types of Juice with their own quantity
     """
     product_juice = models.ForeignKey(ProductJuice, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -233,13 +234,14 @@ class ProductFlavor(models.Model):
         return str(self.flavor)
 
 
-class OrderItemProductFlavor(models.Model):
+class CustomizedProductFlavor(models.Model):
     """
     Intermediate model for OrderItem <-> ProductFlavor, stores quantity
 
     Allows an OrderItem to have multiple types of Flavor with their own quantity
     """
     product_flavor = models.ForeignKey(ProductFlavor, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -300,13 +302,14 @@ class ProductTopping(models.Model):
         return str(self.topping)
 
 
-class OrderItemProductTopping(models.Model):
+class CustomizedProductTopping(models.Model):
     """
     Intermediate model for OrderItem <-> ProductTopping, stores quantity
 
     Allows an OrderItem to have multiple types of Topping with their own quantity
     """
     product_topping = models.ForeignKey(ProductTopping, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -335,13 +338,14 @@ class ProductTea(models.Model):
         return str(self.tea)
 
 
-class OrderItemProductTea(models.Model):
+class CustomizedProductTea(models.Model):
     """
     Intermediate model for OrderItem <-> ProductTea, stores quantity
 
     Allows an OrderItem to have multiple types of Tea with their own quantity
     """
     product_tea = models.ForeignKey(ProductTea, on_delete=models.PROTECT)
+    customized_product = models.ForeignKey('CustomizedProduct', on_delete=models.PROTECT)
     quantity = models.IntegerField()
 
 
@@ -449,11 +453,8 @@ class Product(models.Model):
         return self.name
 
 
-class OrderItem(models.Model):
-    order = models.ForeignKey('Order', on_delete=models.CASCADE)
+class CustomizedProduct(models.Model):
     product = models.ForeignKey(Product, on_delete=models.PROTECT)
-    quantity = models.PositiveSmallIntegerField(default=1)
-    total = models.DecimalField(default=0, max_digits=4, decimal_places=2)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
 
@@ -461,41 +462,12 @@ class OrderItem(models.Model):
     room = models.ForeignKey(RoomChoice, on_delete=models.PROTECT)
     size = models.ForeignKey(ProductSize, on_delete=models.PROTECT)
     milk = models.ForeignKey(ProductMilk, on_delete=models.PROTECT)
+    milk_temp = models.ForeignKey(TempChoice, on_delete=models.PROTECT)
+    milk_foam = models.ForeignKey(FoamChoice, on_delete=models.PROTECT)
 
-    sweeteners = models.ManyToManyField(OrderItemProductSweetener)
-    espresso_shots = models.ManyToManyField(OrderItemProductEspressoShot)
-    toppings = models.ManyToManyField(OrderItemProductTopping)
-    flavors = models.ManyToManyField(OrderItemProductFlavor)
-    juices = models.ManyToManyField(OrderItemProductJuice)
-    teas = models.ManyToManyField(OrderItemProductTea)
-
-    def calculate_item_total(self):
-        item_total = self.price * self.quantity
-        for order_item_product_flavor in self.orderitem_set.all():
-            item_total += order_item_product_flavor.price
-        return item_total
-
-    def save(self, *args, **kwargs):
-        if self.pk is None:
-            super().save(*args, **kwargs)
-        self.total = self.calculate_item_total()
-        super().save(*args, **kwargs)
-
-
-class Order(models.Model):
-    customer_name = models.CharField(max_length=200)
-    special_instructions = models.TextField(blank=True)
-    created_at = models.DateTimeField(default=timezone.now)
-    total = models.DecimalField(default=0, max_digits=4, decimal_places=2)
-
-    def calulate_order_total(self):
-        total = Decimal(0)
-        for order_item in self.orderitem_set.all():
-            total += order_item.calculate_item_total()
-        return total
-
-    def save(self, *args, **kwargs):
-        if self.pk is None:
-            super().save(*args, **kwargs)
-        self.total = self.calculate_order_total()
-        super().save(*args, **kwargs)
+    sweeteners = models.ManyToManyField(ProductSweetener, through=CustomizedProductSweetener)
+    espresso_shots = models.ManyToManyField(ProductEspressoShot, through=CustomizedProductEspressoShot)
+    toppings = models.ManyToManyField(ProductTopping, through=CustomizedProductTopping)
+    flavors = models.ManyToManyField(ProductFlavor, through=CustomizedProductFlavor)
+    juices = models.ManyToManyField(ProductJuice, through=CustomizedProductJuice)
+    teas = models.ManyToManyField(ProductTea, through=CustomizedProductTea)

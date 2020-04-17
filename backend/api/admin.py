@@ -72,14 +72,16 @@ class AllowedTeasInline(admin.StackedInline):
 
 
 class ProductAdmin(admin.ModelAdmin):
-    inlines = [AllowedMilksInline,
-               AllowedSizesInline,
-               AllowedFlavorsInline,
-               AllowedSweetenersInline,
-               AllowedEspressoShotsInline,
-               AllowedJuicesInline,
-               AllowedToppingsInline,
-               AllowedTeasInline]
+    inlines = [
+        AllowedMilksInline,
+        AllowedSizesInline,
+        AllowedFlavorsInline,
+        AllowedSweetenersInline,
+        AllowedEspressoShotsInline,
+        AllowedJuicesInline,
+        AllowedToppingsInline,
+        AllowedTeasInline,
+    ]
 
 
 class SizeAdmin(admin.ModelAdmin):
@@ -102,8 +104,45 @@ class ToppingAdmin(admin.ModelAdmin):
     pass
 
 
-class OrderAdmin(admin.ModelAdmin):
-    pass
+class CustomizedProductFlavorsInline(admin.StackedInline):
+    model = models.CustomizedProduct.flavors.through
+    extra = 0
+
+
+class CustomizedProductSweetenersInline(admin.StackedInline):
+    model = models.CustomizedProduct.sweeteners.through
+    extra = 0
+
+
+class CustomizedProductEspressoShotsInline(admin.StackedInline):
+    model = models.CustomizedProduct.espresso_shots.through
+    extra = 0
+
+
+class CustomizedProductJuicesInline(admin.StackedInline):
+    model = models.CustomizedProduct.juices.through
+    extra = 0
+
+
+class CustomizedProductToppingsInline(admin.StackedInline):
+    model = models.CustomizedProduct.toppings.through
+    extra = 0
+
+
+class CustomizedProductTeasInline(admin.StackedInline):
+    model = models.CustomizedProduct.teas.through
+    extra = 0
+
+
+class CustomizedProductAdmin(admin.ModelAdmin):
+    inlines = [
+        CustomizedProductFlavorsInline,
+        CustomizedProductSweetenersInline,
+        CustomizedProductEspressoShotsInline,
+        CustomizedProductJuicesInline,
+        CustomizedProductToppingsInline,
+        CustomizedProductTeasInline,
+    ]
 
 
 admin.site.register(models.Juice, JuiceAdmin)
@@ -119,4 +158,4 @@ admin.site.register(models.Sweetener, SweetenerAdmin)
 admin.site.register(models.Tea, TeaAdmin)
 admin.site.register(models.ToppingCategory, ToppingCategoryAdmin)
 admin.site.register(models.Topping, ToppingAdmin)
-admin.site.register(models.Order, OrderAdmin)
+admin.site.register(models.CustomizedProduct, CustomizedProductAdmin)
