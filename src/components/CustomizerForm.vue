@@ -40,6 +40,30 @@
             :value="allowedSize.id"
           ></v-radio>
         </v-radio-group>
+
+        <v-radio-group
+          v-model="customizedProduct.ice"
+          v-if="baseProduct.allowed_ice.length"
+          label="Ice:">
+          <v-radio
+            v-for="allowedIce in baseProduct.allowed_ice"
+            :key="allowedIce"
+            :label="allowedIce.name"
+            :value="allowedIce.id"
+          ></v-radio>
+        </v-radio-group>
+
+        <v-radio-group
+          v-model="customizedProduct.room"
+          v-if="baseProduct.allowed_room.length"
+          label="Room:">
+          <v-radio
+            v-for="allowedRoom in baseProduct.allowed_room"
+            :key="allowedRoom"
+            :label="allowedRoom.name"
+            :value="allowedRoom.id"
+          ></v-radio>
+        </v-radio-group>
       </div>
     </v-expand-transition>
     <v-card-actions>
@@ -77,6 +101,12 @@
         room: null,
         ice: null,
         milk: null,
+        sweeteners: [],
+        espresso_shots: [],
+        toppings: [],
+        flavors: [],
+        juices: [],
+        teas: [],
       },
     }),
     methods: {
