@@ -58,6 +58,7 @@ In your browser visit: http://127.0.0.1:8000/
 * /orderitem/
     * GET w/ parameters - allows reloading an item's form with the available choices and defaults based on the current selections
 * Django Forms & Formsets - handle rendering the form and processing submission
+* django-dynamic-formset jQuery library: https://github.com/elo80ka/django-dynamic-formset
 
 #### Pros
 * It's very easy to get validation errors to appear next to fields.
